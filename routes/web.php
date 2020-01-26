@@ -12,9 +12,18 @@
 */
 
 Route::get('/', 'PagesController@index');
-Route::get('about', 'PagesController@about');
-Route::get('services', 'PagesController@services');
-Route::resource('posts', 'PostsController');
+Route::get('/projects', 'PagesController@projects');
+Route::get('participate', 'PagesController@participate');
+Route::get('resources', 'PagesController@resources');
+Route::get('/admin', 'AdminsController@index')->middleware('adminCheck');
+
+Route::resource('/admin', 'AdminsController');
+Route::resource('/attend', 'AttendanceController');
+
+Route::resource('/events', 'EventsController');
+Route::get('/events', 'EventsController@index');
+
+
 
 Auth::routes();
 

@@ -19,10 +19,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
 </head>
-<body>
+<body class="bg-dark">
     <div id="app">
         
-        @include('inc.navbar')
         <main class="py-4">
             <div class="container">
                 @include('inc.messages')

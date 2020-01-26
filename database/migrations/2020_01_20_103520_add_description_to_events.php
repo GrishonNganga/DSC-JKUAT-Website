@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCoverImageToPosts extends Migration
+class AddDescriptionToEvents extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddCoverImageToPosts extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('cover_image');
+        Schema::table('events', function (Blueprint $table) {
+            $table->mediumText('description');
         });
     }
 
@@ -25,8 +25,8 @@ class AddCoverImageToPosts extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('cover_image');
+        Schema::table('events', function (Blueprint $table) {
+            $table->dropColumn('description');
         });
     }
 }
