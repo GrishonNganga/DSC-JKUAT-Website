@@ -1,7 +1,7 @@
 ## Usage
 * Fork repository and clone it locally
 * cd into the project folder
-* Run composer install --no-scripts
+* Run ```composer install --no-scripts```
 * cp .env.example .env
 * php artisan key:gen
 * Change the name of the db in .env from laravel to your db name
