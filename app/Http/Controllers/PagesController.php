@@ -11,10 +11,23 @@ class PagesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'projects']]);
+        //The auth middleware redirects requests to login page if the user is not logged in
+        //The verified middleware ensures that the authed user trying to access this routes is an admin,
+        //  if is not is redirected back to home.
+        //The routes index and projects are not authed. They can be accessed by unauthed users.
+        $this->middleware(['auth', 'verified'], ['except' => ['index', 'projects']]);
     }
     
     public function index(){
+        /**
+         * Default route first loaded.
+         * 
+         * If the user is not authed. 
+         * The first 3 events are pulled from the db and displayed for the user.(Other criterias can be used in future)
+         * 
+         * If the user is logged in 
+         * The first 3 events that the user has not signed up for are displayed.
+         */
         $allEvents = Event::all();
         if(auth::check()){
             $eventNotAttendList = $allEvents->reject(function ($eventNotAttending){
@@ -36,7 +49,7 @@ class PagesController extends Controller
         }else
             return view('pages.index')->with('events', $allEvents->take(3));
     }
-        
+    
     public function projects(){
         return view('pages.coming');
     }

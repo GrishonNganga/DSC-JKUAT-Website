@@ -298,6 +298,7 @@
                             
                                 <div class="col-md-4 col-12">
                                     <div class="card event-card wow fadeInUp">
+                                        <a class="text-white" href="/events/{{$event->id}}">
                                         <img alt="Event poster" class="card-img-top" src="/storage/photo/{{$event->photo}}">
                                         <div class="card-body">
                                             <p class="tagging intermediate float-right">{{$event->skill}}</p>
@@ -322,7 +323,7 @@
                                             {{Form::submit('Attend', ['class' => 'button float-right'])}}
                                             {!!Form::close()!!}
                                             
-                                        </div>
+                                        </div></a>
                                     </div>
                                 </div>
                             @endforeach
@@ -353,7 +354,7 @@
                                     <div class="card hovercard">
                                     
                                         <div class="avatar">
-                                            <img id= "bcol" src="img/grishon.jpg" alt="lead avatar">
+                                            <img id= "bcol" src="img/velda.jpg" alt="lead avatar">
                                         </div>
                                         <div class="info">
                                             <div class="title">
@@ -389,12 +390,12 @@
                                 <div class="card event-card">
                                     <div class="card hovercard">
                                         <div class="avatar">
-                                            <img id="ycol" src="img/grishon.jpg" alt="lead avatar">
+                                            <img id="ycol" src="img/other.jpg" alt="lead avatar">
                                         </div>
                                         <div class="info">
                                             <div class="title">
-                                                <h5>Teresa Abuya</h5>
-                                                <p>Faculty Advisor</p>
+                                                <h5>Wilson Kinyua</h5>
+                                                <p>technical Support</p>
                                             </div>
                                         </div>
                                         <div class="bottom">

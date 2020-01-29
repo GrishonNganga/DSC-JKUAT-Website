@@ -19,12 +19,16 @@ Route::get('/admin', 'AdminsController@index')->middleware('adminCheck');
 
 Route::resource('/admin', 'AdminsController');
 Route::resource('/attend', 'AttendanceController');
+Route::resource('/users', 'UsersController');
+Route::get('/users', 'UsersController@index');
 
 Route::resource('/events', 'EventsController');
 Route::get('/events', 'EventsController@index');
+Route::get('/events/create', 'EventsController@create');
 
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/dashboard', 'DashboardController@index');
+//I don't think this route is being used. Will remove in future if not in use.
+//Route::get('/dashboard', 'DashboardController@index');

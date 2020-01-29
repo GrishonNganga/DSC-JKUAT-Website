@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Event;
+use App\User;
 
 class AdminsController extends Controller
 {
@@ -16,12 +17,21 @@ class AdminsController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        //The auth middleware redirects requests to login page if the user is not logged in
+        //The verified middleware ensures that the authed user trying to access this routes is an admin,
+        //  if is not is redirected back to home.
+        $this->middleware(['auth', 'adminCheck']);
     }
 
     public function index()
     {
-        return view('admin.index');
+        //Default home page of the admins Dashboard
+        $users_total = User::count();
+        $events_total = Event::count();
+        return view('admin.index')->with([
+            'users_total' => $users_total,
+            'events_total' => $events_total,
+        ]);
     }
 
     /**
@@ -31,6 +41,7 @@ class AdminsController extends Controller
      */
     public function create()
     {
+        //Not yet implemented
         return view('admin.create');
     }
 

@@ -25,6 +25,7 @@
                             @foreach ($eventLists as $event)
                                 <div class="col-md-4 col-12">
                                     <div class="card event-card wow fadeInUp">
+                                        <a class="text-white" href="/events/{{$event->id}}">
                                         <img alt="Event poster" class="card-img-top" src="/storage/photo/{{$event->photo}}">
                                         <div class="card-body">
                                             <p class="tagging intermediate float-right">{{$event->skill}}</p>
@@ -49,7 +50,7 @@
                                             {{Form::submit('Attending', ['class' => 'button float-right'])}}
                                             {!!Form::close()!!}
                                             @endif
-                                        </div>
+                                        </div></a>
                                     </div>
                                 </div>
                             @endforeach
@@ -60,6 +61,7 @@
                             @foreach ($events as $event)
                                 <div class="col-md-4 col-12">
                                     <div class="card event-card wow fadeInUp">
+                                        <a class="text-white" href="/events/{{$event->id}}">
                                         <img alt="Event poster" class="card-img-top" src="/storage/photo/{{$event->photo}}">
                                         <div class="card-body">
                                             <p class="tagging intermediate float-right">{{$event->skill}}</p>
@@ -84,7 +86,7 @@
                                             {{Form::submit('Attend', ['class' => 'button float-right'])}}
                                             {!!Form::close()!!}
                                             @endif
-                                        </div>
+                                        </div></a>
                                     </div>
                                 </div>
                             @endforeach
@@ -92,9 +94,13 @@
                     </div>
                 </div>                  
             @else
+            <div class="tab-content">
+            <div class="tab-pane active" id="my_events" role="tabpanel" aria-labelledby="my_events">
+            <div class="row">
                 @foreach ($events as $event)
                     <div class="col-md-4 col-12">
                         <div class="card event-card wow fadeInUp">
+                            <a class="text-white" href="/events/{{$event->id}}">
                             <img alt="Event poster" class="card-img-top" src="/storage/photo/{{$event->photo}}">
                             <div class="card-body">
                                 <p class="tagging intermediate float-right">{{$event->skill}}</p>
@@ -119,10 +125,11 @@
                                 {{Form::submit('Attend', ['class' => 'button float-right'])}}
                                 {!!Form::close()!!}
                                 @endif
-                            </div>
+                            </div></a>
                         </div>
                     </div>
                 @endforeach
+            </div>
             @endif                             
         </section>
     </div>

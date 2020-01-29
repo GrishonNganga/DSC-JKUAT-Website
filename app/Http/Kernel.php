@@ -61,6 +61,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        //This is my custom middleware that ensures the the logged in user trying to access admin routes is an actual admin
         'adminCheck' => \App\Http\Middleware\AdminsOnly::class,
     ];
 

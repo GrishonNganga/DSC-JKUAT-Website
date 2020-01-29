@@ -15,7 +15,11 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //The auth middleware redirects requests to login page if the user is not logged in
+        //The verified middleware ensures that the authed user trying to access this routes is an admin,
+        //  if is not is redirected back to home.
+        
+        $this->middleware(['auth', 'verified']);
     }
 
     /**

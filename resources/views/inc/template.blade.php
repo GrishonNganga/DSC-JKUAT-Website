@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="css/animate.css" rel="stylesheet">
+
    <!--  preloader -->
     <link rel="stylesheet" type="text/css" href="css/pace-theme.css">
     <script src="js/wow.min.js"></script>
@@ -51,6 +52,7 @@
 </head>
 
 <body class="x-hidden has-sticky-header">
+   
     @yield('content')
 
     <a href="#" id="scroll" style="display: none;"><i class="fas fa-angle-up"></i></a>

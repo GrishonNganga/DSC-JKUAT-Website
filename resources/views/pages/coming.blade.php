@@ -77,7 +77,7 @@
                 <li class="nav-item"><a href="index.html" target="_blank" rel="noopener noreferrer" class="nav-link">Stories</a></li>
             </ul>
             <div class="custom-menu__right">
-                <a href="#" class="btn btn-primary btn-pills" target="_blank">Submit a project</a>
+                <a href="#" class="btn btn-primary btn-pills">Submit a project</a>
             </div>
         </div>
     </div>
