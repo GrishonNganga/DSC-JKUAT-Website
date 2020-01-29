@@ -14,8 +14,8 @@
             <h3> {{$event->location}}</h3>
             <h5> {{$event->date}}</h5></i>
             <p><h5> {{$event->description}}</h5></p>
-            @if($attendance = true)
-            {!!Form::open(['action' => ['AttendanceController@store', 'id' => $event->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+            @if($attendance != true)
+            {!!Form::open(['action' => ['AttendanceController@destroy', $event->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
             {{Form::submit('Attending', ['class' => 'button float-right'])}}
             {!!Form::close()!!}
         @else

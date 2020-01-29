@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Event;
 use App\User;
+use auth;
 
 class AttendanceController extends Controller
 {
@@ -96,6 +97,11 @@ class AttendanceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Event::find($id);
+        $user = auth::user();
+
+        $event->users()->detach($user);
+
+        return redirect('/');
     }
 }

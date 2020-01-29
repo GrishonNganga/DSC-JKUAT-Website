@@ -46,7 +46,8 @@
                                             </table>
 
                                             @if($event)
-                                            {!!Form::open(['action' => ['AttendanceController@store', 'id' => $event->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                                            {!!Form::open(['action' => ['AttendanceController@destroy', $event->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                                            {{Form::hidden('_method', 'DELETE')}}
                                             {{Form::submit('Attending', ['class' => 'button float-right'])}}
                                             {!!Form::close()!!}
                                             @endif
