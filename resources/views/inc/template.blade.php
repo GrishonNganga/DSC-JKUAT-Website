@@ -12,15 +12,15 @@
     <meta name="theme-color" content="#0A192F" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="img/dsc-logo.png" type="image/png" />
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('css/responsive.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('css/bootstrap.min.css')}}">
     <link rel="dns-prefetch" href="https://docs.google.com">
     <link href='https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Material+Icons' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     
-    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link rel="stylesheet" href="{{secure_asset('css/styles.css')}}">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="css/animate.css" rel="stylesheet">
 

@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     
 </head>
 <body class="bg-dark">
@@ -30,7 +30,7 @@
             </div>
             
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ secure_asset('js/app.js') }}"></script>
         
     <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
         <script>

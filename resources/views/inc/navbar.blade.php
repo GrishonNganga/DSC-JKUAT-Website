@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top custom-menu custom-menu__light">
   <div class="container">
       <a class="navbar-brand" href="/">
-          <img data-src="{{asset('img/dsc-logo.png')}}" height="35" alt="DSC icon">
+          <img data-src="{{secure_asset('img/dsc-logo.png')}}" height="35" alt="DSC icon">
           <span class="text-white" font-weight="bold"> DSC JKUAT </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -22,12 +22,12 @@
                   </a>
               </li>
               <li class="nav-item"><a href="#technologies" class="nav-link">Technologies</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{asset('projects')}}">Projects</a></li>
-              <li class="nav-item"><a class="nav-link" href="{{asset('resources')}}">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{secure_asset('projects')}}">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{secure_asset('resources')}}">Resources</a></li>
               <li class="nav-item"><a href="#workshops" class="nav-link">Workshops</a></li>
               <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
               <li class="nav-item">
-                  <a class="nav-link" href="{{asset('/participate')}}">Participate</a>
+                  <a class="nav-link" href="{{secure_asset('/participate')}}">Participate</a>
               </li>
               @if(Auth::check())
 
