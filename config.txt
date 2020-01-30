@@ -1,0 +1,4 @@
+DB name: 	 
+Host: 		/= 
+Password: 	@= 
+User: 		:= 
