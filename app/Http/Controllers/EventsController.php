@@ -22,30 +22,21 @@ class EventsController extends Controller
     {
         $events = Event::all();
         if(auth::check()){
+            $user = auth()->user();
+            $eventToAttendList = $user->events;
+
             $eventNotAttendList = $events->reject(function ($attending){
-                $eventAttendList = DB::table('events')
-                ->join('event_user', 'event_user.event_id', '=', 'events.id')
-                ->where("event_user.user_id", "=", auth()->user()->id)
-                ->get();
-                foreach($eventAttendList as $eventAttending){                    
-                    if($attending->id == $eventAttending->event_id){
+                $user = auth()->user();
+                $eventToAttendList = $user->events;
+
+                foreach($eventToAttendList as $eventAttending){                    
+                    if($attending->id == $eventAttending->id){
                         return true;
                     }
                 }
                 
             });
-            $eventToAttendList = $events->filter(function ($eventNotAttending){
-                $eventAttendList = DB::table('events')
-                ->join('event_user', 'event_user.event_id', '=', 'events.id')
-                ->where("event_user.user_id", "=", auth()->user()->id)
-                ->get();
-                foreach($eventAttendList as $eventAttending){                    
-                    if($eventNotAttending->id == $eventAttending->event_id){
-                        return true;
-                    }
-                }
-                
-            });
+            
             return view('events.index')->with([
                 'events' => $eventNotAttendList,
                 'eventLists' => $eventToAttendList,
@@ -153,28 +144,17 @@ class EventsController extends Controller
     {
         $event = Event::find($id);
         $attending = false;
-        $counter = 0;
-        $resources = Resource::all()->reject(function($resource) use ($event){
-            if($resource->event_id != $event->id){
-                return true;
-            }
-        });
+        $resources = $event->resources;
         if(auth::check()){
-            $userEvents = DB::table('events')
-            ->join('event_user', 'event_user.event_id', '=', 'events.id')
-            ->where("event_user.user_id", "=", auth()->user()->id)
-            ->get();
+            $user = auth()->user();
+            $userEvents = $user->events;
 
             foreach($userEvents as $userEvent){
                 if($userEvent->id == $id){
-                    $counter = $counter + 1;
+                    $attending = true;
                 }
             }
-            if($counter >=1){
-                $attending = true;
-            }else{
-                $attending = false;
-            }
+            
             return view('events.show')->with([
                 'event' => $event,
                 'resources' => $resources,

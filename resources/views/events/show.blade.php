@@ -14,7 +14,7 @@
             <h3> {{$event->location}}</h3>
             <h5> {{$event->date}}</h5></i>
             <p><h5> {{$event->description}}</h5></p>
-            @if($attendance != true)
+            @if($attendance == true)
             {!!Form::open(['action' => ['AttendanceController@destroy', $event->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
             {{Form::submit('Attending', ['class' => 'button float-right'])}}
             {!!Form::close()!!}
@@ -37,7 +37,7 @@
     </div>
         <div class="row mt-3">
             <h3> Resources</h3>
-            @if(count($resources) >0)
+            @if(count($resources) > 0)
                 @foreach ($resources as $resource)
                     <div> <br><br>
                         <a href="{{URL::to('/')}}/storage/resource/{{$resource->file_name}}">

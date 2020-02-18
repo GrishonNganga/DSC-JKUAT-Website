@@ -12,7 +12,9 @@ class Event extends Model
         return $this->belongsToMany(User::class);
     }
     //One to many relationship between the Event model and Resource model
+
+
     public function resources(){
-        $this->hasMany('App\Resource');
+        return $this->hasMany('App\Resource');
     }
 }
