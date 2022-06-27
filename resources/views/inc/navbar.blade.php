@@ -57,7 +57,7 @@
               @endif
           </ul>
           <div class="custom-menu__right">
-              <a href="/events" class="event-btn" rel="noreferrer" >All
+              <a href="#" class="event-btn" rel="noreferrer" >All
                   Events</a>
           </div>
       </div>
